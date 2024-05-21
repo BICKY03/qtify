@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Section from './components/Section/Section';
-
+import FilterSection from './components/FilterSection/FilterSection';
 import {fetchTopAlbums, fetchNewAlbums, fetchSongs} from './api/api'
 import { useEffect, useState } from 'react';
 import styles from "./App.module.css"
@@ -114,7 +114,7 @@ const generateNewSongs=(index)=>{
       <div className={styles.sectionWrapper}>
       <Section type='album' title='Top Albums' data={topAlbumSongs}/>
       <Section type='album' title='New Albums' data={newAlbumSongs}/>
-     
+      <FilterSection  type='song' title='Songs' value={value} filteredData={filteredData} handleChangeIndex={handleChangeIndex}/>
       </div>
     </div>
   );
